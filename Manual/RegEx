@@ -1,0 +1,28 @@
+Goal: Gather data from the website metacritic.com for popular movies with https://regex101.com
+
+
+"Delimiters have an impact on escaping: if the delimiter is / and the regex needs to look for / literals, then the forward slash must be escaped before it can be a literal (\/)."
+
+https://riptutorial.com/regex/example/15849/-delimiters-Links to an external site.
+
+And because we working with HTML code there a lot of / sign. But! You can change the delimiter itself  by clicking on three vertical dots near regex field -and change it manually for any sign ( I chose #), so in a formula field, you will just precisely copy and paste HTML for "matching" without confusion and red marks
+
+
+2. SetRegOptions on a right corner of regex field - I chose Single Line and Ungreedy and that let me to do metascore :
+<div class="clamp-score-wrap">.+<div class="metascore_w large movie positive">(\d+)
+
+3. All that help me to simplify it as possible and I finish with 
+
+a) For Title    class="title"><h3>(.+)</h3>
+
+b) Release date <span>(.+)</span>
+
+c) Description  <div class="summary">\s+(.+)\s+
+
+d)  Metascore <div class="clamp-score-wrap">.+<div class="metascore_w large movie positive">(\d+)</div>
+
+e)  photo URL <td class="clamp-image-wrap">.+<img src="(.+)"
+
+where are:
+\s+ ( or \s*)  is any whitespace, which includes spaces, tabs, and newlines ( as Tiffani Vick menshioned above)
+(\d+) -  any digit from the Helpful cheat sheet that Vincent Hong provided. 
