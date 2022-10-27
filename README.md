@@ -1,7 +1,7 @@
 ***
 ## DA320
 ***
-Class project:  </p>
+Class projects:  </p>
 RegEx from manual to automatization </p>
 MongoDB </p>
 
